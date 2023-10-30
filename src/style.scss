@@ -1,0 +1,42 @@
+:root {
+  --bg-success: #77dd77;
+  --bg-success-hover: #3ace3a;
+  --bg-danger: #dd7777;
+  --bg-danger-hover: #dd4040;
+  --bg-warning: #ff964f;
+  --bg-warning-hover: #ff8331;
+}
+
+// Style reset
+button {
+  border: none;
+  font: inherit;
+  color: inherit;
+  background: none;
+  padding: 0;
+  outline: inherit;
+}
+
+.ly-variant {
+  &--success {
+    background-color: var(--bg-success);
+
+    &:hover {
+      background-color: var(--bg-success-hover);
+    }
+  }
+
+  &--danger {
+    background-color: var(--bg-danger);
+    &:hover {
+      background-color: var(--bg-danger-hover);
+    }
+  }
+
+  &--warning {
+    background-color: var(--bg-warning);
+    &:hover {
+      background-color: var(--bg-warning-hover);
+    }
+  }
+}

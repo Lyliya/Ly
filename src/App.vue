@@ -1,0 +1,34 @@
+<script setup lang="ts">
+import "./style.scss";
+import "./test.scss";
+import { LyButton, LyBadge } from ".";
+</script>
+
+<template>
+  <div class="flex-col">
+    <h1>Playground</h1>
+    <div class="flex">
+      <LyButton variant="success">Hello World !</LyButton>
+      <LyButton variant="danger">Hello World !</LyButton>
+      <!-- <LyButton variant="warning">Hello World !</LyButton> -->
+    </div>
+    <div class="flex">
+      <LyBadge variant="success">Hello World !</LyBadge>
+      <LyBadge variant="danger">Hello World !</LyBadge>
+      <LyBadge variant="warning">Hello World !</LyBadge>
+    </div>
+  </div>
+</template>
+
+<style>
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+</style>
