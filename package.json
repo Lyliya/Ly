@@ -19,13 +19,18 @@
     "scripts": {
         "dev": "vite",
         "build": "vue-tsc && vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "story:dev": "histoire dev",
+        "story:build": "histoire build",
+        "story:preview": "histoire preview"
     },
     "peerDependencies": {
         "vue": "^3.3.4"
     },
     "devDependencies": {
+        "@histoire/plugin-vue": "0.17.0",
         "@vitejs/plugin-vue": "^4.2.3",
+        "histoire": "0.17.0",
         "sass": "^1.69.5",
         "typescript": "^5.0.2",
         "vite": "^4.4.5",

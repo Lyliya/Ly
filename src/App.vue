@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // import "../dist/style.css";
 // import { LyButton, LyBadge } from "../dist/ly-test.js";
-import "./style.scss";
+import "@/style.scss";
 import { LyButton, LyBadge } from ".";
 </script>
 
