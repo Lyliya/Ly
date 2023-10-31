@@ -1,6 +1,7 @@
 <script setup lang="ts">
+// import "../dist/style.css";
+// import { LyButton, LyBadge } from "../dist/ly-test.js";
 import "./style.scss";
-import "./test.scss";
 import { LyButton, LyBadge } from ".";
 </script>
 
@@ -10,7 +11,7 @@ import { LyButton, LyBadge } from ".";
     <div class="flex">
       <LyButton variant="success">Hello World !</LyButton>
       <LyButton variant="danger">Hello World !</LyButton>
-      <!-- <LyButton variant="warning">Hello World !</LyButton> -->
+      <LyButton variant="warning">Hello World !</LyButton>
     </div>
     <div class="flex">
       <LyBadge variant="success">Hello World !</LyBadge>
@@ -20,7 +21,11 @@ import { LyButton, LyBadge } from ".";
   </div>
 </template>
 
-<style>
+<style lang="scss">
+:root {
+  --ly-button-bg-success: pink;
+}
+
 .flex {
   display: flex;
   gap: 1rem;

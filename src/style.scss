@@ -1,11 +1,4 @@
-:root {
-  --bg-success: #77dd77;
-  --bg-success-hover: #3ace3a;
-  --bg-danger: #dd7777;
-  --bg-danger-hover: #dd4040;
-  --bg-warning: #ff964f;
-  --bg-warning-hover: #ff8331;
-}
+@use "variables";
 
 // Style reset
 button {

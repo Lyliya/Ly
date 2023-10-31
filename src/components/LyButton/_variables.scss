@@ -1,0 +1,18 @@
+:root,
+:host {
+  --ly-button-bg-success: var(--bg-success);
+  --ly-button-bg-success-hover: var(--bg-success-hover);
+  --ly-button-bg-danger: var(--bg-danger);
+  --ly-button-bg-danger-hover: var(--bg-danger-hover);
+  --ly-button-bg-warning: var(--bg-warning);
+  --ly-button-bg-warning-hover: var(--bg-warning-hover);
+  --ly-button-color: white;
+  --ly-button-padding-top: 8px;
+  --ly-button-padding-right: 24px;
+  --ly-button-padding-bottom: 8px;
+  --ly-button-padding-left: 24px;
+  --ly-button-border-radius: 8px;
+  --ly-button-font-size: 18px;
+  --ly-button-line-height: 28px;
+  --ly-button-line-font-height: 500;
+}

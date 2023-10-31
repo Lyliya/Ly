@@ -14,13 +14,7 @@ defineProps({
 </template>
 
 <style lang="scss">
-:root {
-  --ly-badge-bg-success: var(--bg-success);
-  --ly-badge-bg-success-hover: var(--bg-success-hover);
-  --ly-badge-bg-danger: var(--bg-danger);
-  --ly-badge-bg-warning: var(--bg-warning);
-}
-
+@use "variables";
 .ly-badge {
   padding: 4px 8px 4px 8px;
   font-weight: 600;
