@@ -18,7 +18,7 @@ defineProps({
 <template>
   <button
     class="ly-button"
-    :class="[`ly-button--${variant}`]"
+    :class="[{ 'ly-button--disabled': disabled }, `ly-button--${variant}`]"
     :disabled="disabled"
     v-bind="$attrs"
   >
@@ -40,24 +40,29 @@ defineProps({
   color: var(--ly-button-color);
   display: block;
 
+  &--disabled {
+    opacity: 75%;
+    cursor: not-allowed;
+  }
+
   &--success {
     background-color: var(--ly-button-bg-success);
 
-    &:hover {
+    &:hover:not(.ly-button--disabled) {
       background-color: var(--ly-button-bg-success-hover);
     }
   }
 
   &--danger {
     background-color: var(--ly-button-bg-danger);
-    &:hover {
+    &:hover:not(.ly-button--disabled) {
       background-color: var(--ly-button-bg-danger-hover);
     }
   }
 
   &--warning {
     background-color: var(--ly-button-bg-warning);
-    &:hover {
+    &:hover:not(.ly-button--disabled) {
       background-color: var(--ly-button-bg-warning-hover);
     }
   }
