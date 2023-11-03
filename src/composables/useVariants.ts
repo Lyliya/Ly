@@ -6,7 +6,8 @@ export enum Variant {
   WARNING = "warning",
 }
 
-export type VariantType = `${Variant}`;
+export const availableVariant = ["success", "danger", "warning"] as const;
+export type VariantType = (typeof availableVariant)[number];
 
 export const useVariants = <T extends VariantType = VariantType>() => ({
   variant: {
