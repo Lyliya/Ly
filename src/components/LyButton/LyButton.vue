@@ -24,7 +24,7 @@ defineProps({
     class="ly-button"
     :class="[
       { 'ly-button--disabled': disabled, 'ly-button--outline': outline },
-      `ly-button--${variant}`,
+      `ly-variant--${variant}`,
     ]"
     :disabled="disabled"
     v-bind="$attrs"
@@ -44,49 +44,38 @@ defineProps({
   border-radius: var(--ly-button-border-radius);
   font-size: var(--ly-button-font-size);
   line-height: var(--ly-button-line-height);
-  color: var(--ly-button-color);
   display: block;
   box-sizing: border-box;
-  border: 2px solid;
-  transition: background-color 0.2s;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  color: var(--variant-text-color);
+  background-color: var(--variant-color);
+
+  &:enabled {
+    &:hover,
+    &:active {
+      color: var(--variant-text-color);
+      background-color: var(--variant-color-dark);
+    }
+  }
 
   &--disabled {
     opacity: 75%;
     cursor: not-allowed;
   }
 
-  &--success {
-    background-color: var(--ly-button-bg-success);
-    border-color: var(--ly-button-bg-success);
-
-    &:hover:not(.ly-button--disabled) {
-      background-color: var(--ly-button-bg-success-hover);
-      border-color: var(--ly-button-bg-success-hover);
-    }
-  }
-
-  &--danger {
-    background-color: var(--ly-button-bg-danger);
-    border-color: var(--ly-button-bg-danger);
-
-    &:hover:not(.ly-button--disabled) {
-      background-color: var(--ly-button-bg-danger-hover);
-      border-color: var(--ly-button-bg-danger-hover);
-    }
-  }
-
-  &--warning {
-    background-color: var(--ly-button-bg-warning);
-    border-color: var(--ly-button-bg-warning);
-
-    &:hover:not(.ly-button--disabled) {
-      background-color: var(--ly-button-bg-warning-hover);
-      border-color: var(--ly-button-bg-warning-hover);
-    }
-  }
-
   &--outline {
     background-color: transparent;
+    color: var(--variant-color);
+    border: 1px solid;
+
+    &:enabled {
+      &:hover,
+      &:active {
+        color: var(--variant-text-color);
+        background-color: var(--variant-color);
+        border: 1px solid var(--variant-color);
+      }
+    }
   }
 }
 </style>

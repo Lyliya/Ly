@@ -14,7 +14,7 @@ defineProps({
 <template>
   <span
     class="ly-badge"
-    :class="[{ 'ly-button--outline': outline }, `ly-badge--${variant}`]"
+    :class="[{ 'ly-badge--outline': outline }, `ly-variant--${variant}`]"
   >
     <slot></slot>
   </span>
@@ -31,25 +31,14 @@ defineProps({
   line-height: var(--ly-badge-line-height);
   color: var(--ly-badge-color);
   box-sizing: border-box;
-  border: 2px solid;
-
-  &--success {
-    background-color: var(--ly-badge-bg-success);
-    border-color: var(--ly-badge-bg-success);
-  }
-
-  &--danger {
-    background-color: var(--ly-badge-bg-danger);
-    border-color: var(--ly-badge-bg-danger);
-  }
-
-  &--warning {
-    background-color: var(--ly-badge-bg-warning);
-    border-color: var(--ly-badge-bg-warning);
-  }
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  color: var(--variant-text-color);
+  background-color: var(--variant-color);
 
   &--outline {
     background-color: transparent;
+    color: var(--variant-color);
+    border: 1px solid var(--variant-color);
   }
 }
 </style>
