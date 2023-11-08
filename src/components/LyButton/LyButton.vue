@@ -40,7 +40,7 @@ defineProps({
   cursor: pointer;
   padding: var(--ly-button-padding-top) var(--ly-button-padding-right)
     var(--ly-button-padding-bottom) var(--ly-button-padding-left);
-  font-weight: var(--ly-button-line-font-height);
+  font-weight: var(--ly-button-line-font-weight);
   border-radius: var(--ly-button-border-radius);
   font-size: var(--ly-button-font-size);
   line-height: var(--ly-button-line-height);
@@ -48,6 +48,7 @@ defineProps({
   display: block;
   box-sizing: border-box;
   border: 2px solid;
+  transition: background-color 0.2s;
 
   &--disabled {
     opacity: 75%;

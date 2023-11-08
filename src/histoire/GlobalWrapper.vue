@@ -15,7 +15,7 @@ function hasWrapper() {
 </script>
 
 <template>
-  <div class="global-wrapper" :style="hasWrapper() ? 'padding: 0.25rem;' : ''">
+  <div class="global-wrapper" :style="hasWrapper() ? 'padding: 0.5rem;' : ''">
     <slot />
   </div>
 </template>
