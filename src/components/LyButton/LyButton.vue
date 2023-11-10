@@ -65,15 +65,13 @@ defineProps({
 
   &--outline {
     background-color: transparent;
-    color: var(--variant-color);
-    border: 1px solid;
+    color: var(--variant-text-color);
+    border: 1px solid var(--variant-color);
 
     &:enabled {
       &:hover,
       &:active {
-        color: var(--variant-text-color);
         background-color: var(--variant-color);
-        border: 1px solid var(--variant-color);
       }
     }
   }

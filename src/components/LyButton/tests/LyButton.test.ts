@@ -23,17 +23,17 @@ describe("LyButton test", () => {
 
     it('Should be a success variant', () => {
         const wrapper = componentFactory();
-        expect(findButton(wrapper).classes()).toContain("ly-button--success")
+        expect(findButton(wrapper).classes()).toContain("ly-variant--success")
     })
 
     it('Should be a danger variant', () => {
         const wrapper = componentFactory({variant: "danger"});
-        expect(findButton(wrapper).classes()).toContain("ly-button--danger")
+        expect(findButton(wrapper).classes()).toContain("ly-variant--danger")
     })
 
     it('Should be a warning variant', () => {
         const wrapper = componentFactory({variant: "warning"});
-        expect(findButton(wrapper).classes()).toContain("ly-button--warning")
+        expect(findButton(wrapper).classes()).toContain("ly-variant--warning")
     })
 
     it('Should be disabled', () => {
