@@ -1,3 +1,5 @@
+@use "variants";
+
 :root,
 :host {
   --bg-primary: #7500a3;
@@ -8,30 +10,4 @@
   --bg-danger-hover: #ad1316;
   --bg-warning: #e39c57;
   --bg-warning-hover: #cc8c4e;
-}
-
-.ly-variant {
-  &--primary {
-    --variant-text-color: #ffffff;
-    --variant-color: var(--bg-primary);
-    --variant-color-dark: var(--bg-primary-hover);
-  }
-
-  &--success {
-    --variant-text-color: #ffffff;
-    --variant-color: var(--bg-success);
-    --variant-color-dark: var(--bg-success-hover);
-  }
-
-  &--warning {
-    --variant-text-color: #ffffff;
-    --variant-color: var(--bg-warning);
-    --variant-color-dark: var(--bg-warning-hover);
-  }
-
-  &--danger {
-    --variant-text-color: #ffffff;
-    --variant-color: var(--bg-danger);
-    --variant-color-dark: var(--bg-danger-hover);
-  }
 }

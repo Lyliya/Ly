@@ -9,7 +9,7 @@ import { LyButton, LyBadge } from ".";
   <div class="flex-col">
     <h1>Playground</h1>
     <div class="flex">
-      <LyButton variant="success" outline>Hello World !</LyButton>
+      <LyButton variant="success">Hello World !</LyButton>
       <LyButton variant="danger">Hello World !</LyButton>
       <LyButton variant="warning">Hello World !</LyButton>
     </div>
@@ -22,10 +22,6 @@ import { LyButton, LyBadge } from ".";
 </template>
 
 <style lang="scss">
-.ly-button--success {
-  --theme-color: pink;
-}
-
 .flex {
   display: flex;
   gap: 1rem;

@@ -1,13 +1,8 @@
-// :root,
-// :host {
-//   --ly-badge-bg-success: var(--bg-success);
-//   --ly-badge-bg-success-hover: var(--bg-success-hover);
-//   --ly-badge-bg-danger: var(--bg-danger);
-//   --ly-badge-bg-warning: var(--bg-warning);
-//   --ly-badge-color: white;
-// }
+@use "src/variants";
 
 .ly-badge {
+  @include variants.variant-color;
+
   --ly-badge-padding-top: 4px;
   --ly-badge-padding-right: 8px;
   --ly-badge-padding-bottom: 4px;
