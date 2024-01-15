@@ -1,24 +1,18 @@
 import { PropType } from "vue";
 
-export enum Variant {
+export enum LyVariants {
   PRIMARY = "primary",
   SUCCESS = "success",
   DANGER = "danger",
   WARNING = "warning",
 }
 
-export const availableVariant = [
-  "primary",
-  "success",
-  "danger",
-  "warning",
-] as const;
-export type VariantType = (typeof availableVariant)[number];
-
-export const useVariants = <T extends VariantType = VariantType>() => ({
+export const useVariants = <T extends readonly LyVariants[] = LyVariants[]>(
+  variantDefault: `${LyVariants}` = LyVariants.PRIMARY
+) => ({
   variant: {
-    type: String as unknown as PropType<T>,
+    type: String as PropType<`${T[number]}`>,
     required: false,
-    default: "success",
+    default: variantDefault,
   },
 });

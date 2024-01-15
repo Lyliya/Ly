@@ -3,12 +3,24 @@
 .ly-button {
   @include variants.variant-color;
 
-  --ly-button-padding-top: 8px;
-  --ly-button-padding-right: 24px;
-  --ly-button-padding-bottom: 8px;
-  --ly-button-padding-left: 24px;
+  --ly-button-padding-top: 0px;
+  --ly-button-padding-right: 16px;
+  --ly-button-padding-bottom: 0px;
+  --ly-button-padding-left: 16px;
   --ly-button-border-radius: 8px;
   --ly-button-font-size: 18px;
   --ly-button-line-height: 28px;
   --ly-button-line-font-weight: 500;
+
+  &--small {
+    --ly-button-height: 32px;
+  }
+
+  &--medium {
+    --ly-button-height: 40px;
+  }
+
+  &--large {
+    --ly-button-height: 48px;
+  }
 }

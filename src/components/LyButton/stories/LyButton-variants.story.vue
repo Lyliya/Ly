@@ -7,9 +7,9 @@ import { logEvent } from "histoire/client";
 <template>
   <Story title="LyButton/Variants" :layout="{ type: 'grid', width: 200 }">
     <Variant v-for="variant in lyButtonVariants" :title="variant">
-      <LyButton :variant="variant" @click="logEvent('Click', $event)"
-        ><span>L</span></LyButton
-      >
+      <LyButton :variant="variant" @click="logEvent('Click', $event)">
+        Button
+      </LyButton>
     </Variant>
   </Story>
 </template>

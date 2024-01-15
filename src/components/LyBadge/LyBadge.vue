@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useVariants } from "@/composables/useVariants";
-import type { LyBadgeVariants } from "@/components/LyBadge/LyBadge.type";
+import {
+  lyBadgeSizes,
+  lyBadgeVariants,
+} from "@/components/LyBadge/LyBadge.type";
+import { useSizes } from "@/composables/useSizes";
 
 const props = defineProps({
-  ...useVariants<LyBadgeVariants>(),
+  ...useSizes<typeof lyBadgeSizes>(),
+  ...useVariants<typeof lyBadgeVariants>(),
   outline: {
     type: Boolean,
     default: false,
@@ -17,9 +22,14 @@ const badgeClass = computed(() => ({
 </script>
 
 <template>
-  <span class="ly-badge" :class="[badgeClass, `ly-badge--${variant}`]">
-    <slot></slot>
-  </span>
+  <div
+    class="ly-badge"
+    :class="[badgeClass, `ly-badge--${variant}`, `ly-badge--${size}`]"
+  >
+    <div class="ly-badge__content">
+      <slot></slot>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
@@ -37,6 +47,10 @@ const badgeClass = computed(() => ({
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
   color: var(--variant-text-color);
   background-color: var(--variant-color);
+  height: var(--ly-badge-height);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
   &--outline {
     background-color: transparent;
