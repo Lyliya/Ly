@@ -1,7 +1,6 @@
 @use "src/variants";
 
 .ly-badge {
-  @include variants.variant-color;
 
   --ly-badge-padding-top: 0px;
   --ly-badge-padding-right: 8px;
@@ -9,6 +8,8 @@
   --ly-badge-padding-left: 8px;
   --ly-badge-border-radius: 4px;
   --ly-badge-line-font-weight: 600;
+
+  @include variants.variant-color;
 
   &--small {
     --ly-badge-height: 24px;

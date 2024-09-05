@@ -1,8 +1,6 @@
 @use "src/variants";
 
 .ly-button {
-  @include variants.variant-color;
-
   --ly-button-padding-top: 0px;
   --ly-button-padding-right: 16px;
   --ly-button-padding-bottom: 0px;
@@ -11,6 +9,9 @@
   --ly-button-font-size: 18px;
   --ly-button-line-height: 28px;
   --ly-button-line-font-weight: 500;
+
+  @include variants.variant-color;
+
 
   &--small {
     --ly-button-height: 32px;
