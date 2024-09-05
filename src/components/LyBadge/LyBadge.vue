@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, useSlots } from "vue";
 import { useVariants } from "@/composables/useVariants";
 import {
   lyBadgeSizes,
@@ -16,6 +16,8 @@ const props = defineProps({
   },
 });
 
+const slots = useSlots();
+
 const badgeClass = computed(() => ({
   "ly-badge--outline": props.outline,
 }));
@@ -27,7 +29,13 @@ const badgeClass = computed(() => ({
     :class="[badgeClass, `ly-badge--${variant}`, `ly-badge--${size}`]"
   >
     <div class="ly-badge__content">
+      <div v-if="slots.prepend">
+        <slot name="prepend"></slot>
+      </div>
       <slot></slot>
+      <div v-if="slots.append">
+        <slot name="append"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -51,6 +59,13 @@ const badgeClass = computed(() => ({
   display: inline-flex;
   justify-content: center;
   align-items: center;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
 
   &--outline {
     background-color: transparent;

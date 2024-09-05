@@ -1,13 +1,19 @@
 <script setup lang="ts">
 import LyBadge from "../LyBadge.vue";
-import { lyBadgeSizes } from "../LyBadge.type";
 </script>
 
 <template>
-  <Story title="LyBadge/Sizes" :layout="{ type: 'grid', width: 200 }">
-    <Variant v-for="size in lyBadgeSizes" :title="`${size}`">
-      <LyBadge :size="size">
-        <span>{{ size }}</span>
+  <Story title="LyBadge/Slots" :layout="{ type: 'grid', width: 200 }">
+    <Variant title="Prepend">
+      <LyBadge>
+        <template #prepend>✓</template>
+        Prepend
+      </LyBadge>
+    </Variant>
+    <Variant title="Append">
+      <LyBadge>
+        <template #append>✓</template>
+        Append
       </LyBadge>
     </Variant>
   </Story>
