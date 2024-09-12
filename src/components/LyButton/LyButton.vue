@@ -8,10 +8,6 @@ import {
 import { computed, useSlots } from "vue";
 import LyLoader from "@/components/LyLoader/LyLoader.vue";
 
-defineOptions({
-  inheritAttrs: false,
-});
-
 const props = defineProps({
   ...useVariants<typeof lyButtonVariants>(),
   ...useSizes<typeof lyButtonSizes>(),
