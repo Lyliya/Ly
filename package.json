@@ -3,14 +3,13 @@
   "displayName": "Ly",
   "version": "0.1.0",
   "type": "module",
-  "main": "./dist/ly.umd.js",
-  "module": "./dist/ly.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/ly.js",
-      "require": "./dist/ly.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
   "files": [
