@@ -6,6 +6,7 @@ import {
   lyButtonSizes,
 } from "@/components/LyButton/LyButton.type";
 import { computed, useSlots } from "vue";
+import LyLoader from "@/components/LyLoader/LyLoader.vue";
 
 defineOptions({
   inheritAttrs: false,
@@ -30,6 +31,14 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  loading: {
+    type: Boolean,
+    default: false,
+  },
+  wide: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const slots = useSlots();
@@ -37,7 +46,9 @@ const slots = useSlots();
 const buttonClass = computed(() => ({
   "ly-button--outline": props.outline,
   "ly-button--rounded": props.rounded,
-  "ly-button--disabled": props.disabled,
+  "ly-button--disabled": props.disabled || props.loading,
+  "ly-button--wide": props.wide,
+  "ly-button--loading": props.loading,
   "ly-button--icon": slots.icon !== undefined,
 }));
 </script>
@@ -46,7 +57,7 @@ const buttonClass = computed(() => ({
   <button
     class="ly-button"
     :class="[buttonClass, `ly-button--${variant}`, `ly-button--${size}`]"
-    :disabled="disabled"
+    :disabled="disabled || loading"
   >
     <div class="ly-button__content">
       <div v-if="slots.prepend && !slots.icon">
@@ -58,6 +69,7 @@ const buttonClass = computed(() => ({
         <slot name="append"></slot>
       </div>
     </div>
+    <LyLoader v-if="props.loading" class="ly-button__loading" />
   </button>
 </template>
 
@@ -78,6 +90,7 @@ const buttonClass = computed(() => ({
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
   color: var(--variant-text-color);
   background-color: var(--variant-color);
+  position: relative;
 
   &__content {
     display: flex;
@@ -86,12 +99,33 @@ const buttonClass = computed(() => ({
     gap: 8px;
   }
 
+  &__loading {
+    height: 24px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
   &:enabled {
     &:hover,
     &:active {
       color: var(--variant-text-color);
       background-color: var(--variant-color-dark);
     }
+  }
+
+  &--loading {
+    .ly-button__content {
+      visibility: hidden;
+    }
+  }
+
+  &--wide {
+    width: 100%;
   }
 
   &--disabled {
