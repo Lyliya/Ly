@@ -59,19 +59,17 @@ const buttonClass = computed(() => ({
     :class="[buttonClass, `ly-button--${variant}`, `ly-button--${size}`]"
     :disabled="disabled || loading"
   >
-    <div class="ly-button__container">
-      <LyLoader v-if="props.loading" class="ly-button__loading" />
-      <div class="ly-button__content">
-        <div v-if="slots.prepend && !slots.icon">
-          <slot name="prepend"></slot>
-        </div>
-        <slot v-if="!slots.icon"></slot>
-        <slot name="icon"></slot>
-        <div v-if="slots.append && !slots.icon">
-          <slot name="append"></slot>
-        </div>
+    <div class="ly-button__content">
+      <div v-if="slots.prepend && !slots.icon">
+        <slot name="prepend"></slot>
+      </div>
+      <slot v-if="!slots.icon"></slot>
+      <slot name="icon"></slot>
+      <div v-if="slots.append && !slots.icon">
+        <slot name="append"></slot>
       </div>
     </div>
+    <LyLoader v-if="props.loading" class="ly-button__loading" />
   </button>
 </template>
 
@@ -92,13 +90,7 @@ const buttonClass = computed(() => ({
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
   color: var(--variant-text-color);
   background-color: var(--variant-color);
-
-  &__container {
-    position: relative;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-  }
+  position: relative;
 
   &__content {
     display: flex;
@@ -112,9 +104,9 @@ const buttonClass = computed(() => ({
     aspect-ratio: 1/1;
     position: absolute;
     margin: auto;
-    top: 0;
-    bottom: 0;
     left: 0;
+    bottom: 0;
+    top: 0;
     right: 0;
   }
 
