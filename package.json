@@ -1,7 +1,7 @@
 {
-  "name": "ly-test",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@lyliya/ly",
+  "displayName": "Ly",
+  "version": "0.0.1",
   "type": "module",
   "main": "./dist/ly.umd.js",
   "module": "./dist/ly.js",
@@ -44,5 +44,15 @@
     "vitest": "^2.0.5",
     "vue": "^3.5.2",
     "vue-tsc": "^2.1.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lyliya/Ly.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lyliya/Ly/issues"
+  },
+  "homepage": "https://github.com/Lyliya/Ly#readme"
 }
