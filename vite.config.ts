@@ -7,8 +7,14 @@ import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), dts(), cssInjectedByJsPlugin()],
+  plugins: [
+    vue(),
+    dts(),
+    cssInjectedByJsPlugin({ relativeCSSInjection: true }),
+  ],
   build: {
+    cssCodeSplit: true,
+    emptyOutDir: true,
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "Ly",
